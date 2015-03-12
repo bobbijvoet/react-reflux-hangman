@@ -1,0 +1,56 @@
+{
+  "name": "react-reflux-starter",
+  "version": "0.1.0",
+  "description": "",
+  "main": "src/main.jsx",
+  "scripts": {
+    "watch": "npm run watch-js ",
+    "watch-js": "watchify --debug src/main.jsx -o build/app.js -v",
+    "build": "browserify src/main.jsx | uglifyjs --compress --mangle -o build/app.js -- -",
+    "test": "mochify",
+    "test-watch": "mochify --watch",
+    "cover": "node cover.js && cat lcov.info | coveralls && rm lcov.info",
+    "server": "node server.js",
+    "clean": "rm build/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bobbijvoet/react-reflux-starter.git"
+  },
+  "keywords": [],
+  "author": "Bob Bijvoet",
+  "license": "MIT",
+  "devDependencies": {
+    "babelify": "^5.0.4",
+    "browserify": "^9.0.3",
+    "coveralls": "^2.11.2",
+    "expect.js": "^0.3.1",
+    "express": "^4.12.2",
+    "gulp": "^3.8.11",
+    "gulp-connect": "^2.2.0",
+    "gulp-if": "^1.2.5",
+    "gulp-livereload": "^3.8.0",
+    "gulp-plumber": "^1.0.0",
+    "gulp-sourcemaps": "^1.5.0",
+    "lodash": "^3.5.0",
+    "mochify": "^2.6.0",
+    "mochify-istanbul": "^2.1.1",
+    "uglify-js": "^2.4.16",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^2.4.0"
+  },
+  "dependencies": {
+    "console-polyfill": "^0.2.0",
+    "es5-shim": "^4.1.0",
+    "react": "^0.12.2",
+    "react-router": "^0.12.4",
+    "reflux": "^0.2.1",
+    "xhr": "^2.0.1"
+  },
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  }
+}
