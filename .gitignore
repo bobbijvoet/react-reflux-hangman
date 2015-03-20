@@ -1,5 +1,7 @@
 # Build
-build/app.js
+build/build.js
+build/build.js.map
+
 
 # Logs
 logs
